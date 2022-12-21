@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Hypoteneus from "./hypoteneus";
+import IsTriangle from "./isTriangle";
+import Quiz from "./quiz";
+import Route from "./Route";
+import Header from "./Header";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div>
+    <Header />
+    <Route path = '/'>
+      <IsTriangle />
+    </Route>
+
+    <Route path = '/hypoteneus'>
+      <Hypoteneus />
+    </Route>
+
+    <Route path = '/quiz'>
+      <Quiz />
+    </Route>
+  </div>
 }
+
+// function getHypoteneus(){
+//   if(window.location.pathname==='/hypoteneus'){
+//     return <Hypoteneus />
+//   }
+// }
+
+// function playQuiz(){
+//   if(window.location.pathname==='/quiz'){
+//     return < Quiz />
+//   }
+// }
+//   function showIsTriangle(){
+//     if(window.location.pathname==='/'){
+//       return <IsTriangle />
+//     }
+//   }
+  
 
 export default App;
